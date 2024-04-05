@@ -1,0 +1,8 @@
+<div class="btn-group-vertical" role="group">
+    <button *ngFor="let button of buttons"
+            type="button"
+            class="btn btn-secondary mb-2"
+            (click)="button.action()">
+        {{ button.label }}
+    </button>
+</div>
