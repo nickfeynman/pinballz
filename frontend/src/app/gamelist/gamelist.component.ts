@@ -14,13 +14,14 @@ export class GamelistComponent {
   constructor(private http: HttpClient) {}
 
   buttons = [
-    { label: 'Star Trek -TNG', action: () => this.buttonClicked(1) },
-    { label: 'Deadpool', action: () => this.buttonClicked(2) },
-    { label: 'Whirlwind', action: () => this.buttonClicked(3) },
-    { label: 'Pulp Fiction', action: () => this.buttonClicked(4) },
-    { label: 'Congo', action: () => this.buttonClicked(5) },
-    { label: 'The Shadow', action: () => this.buttonClicked(6) },
-    { label: 'Spectrum', action: () => this.buttonClicked(7) }
+    { label: 'Star Trek -TNG', action: () => this.buttonClicked(1), image: 'startrek.png' },
+    { label: 'Deadpool', action: () => this.buttonClicked(2), image: 'deadpool.png' },
+    { label: 'Whirlwind', action: () => this.buttonClicked(3), image: 'whirlwind.png' },
+    { label: 'Pulp Fiction', action: () => this.buttonClicked(4), image: 'pulpfiction.png' },
+    { label: 'Congo', action: () => this.buttonClicked(5), image: 'congo.png' },
+    { label: 'The Shadow', action: () => this.buttonClicked(6), image: 'theshadow.png' },
+    { label: 'Spectrum', action: () => this.buttonClicked(7), image: 'spectrum.png' },
+    { label: 'NYC PINS', action: () => this.buttonClicked(0), image: 'nycpins.png' }
 
     // Add more button data as needed
   ];
@@ -28,13 +29,17 @@ export class GamelistComponent {
   buttonClicked(buttonNumber: number) {
     // Handle button click logic here
     console.log('Button ' + buttonNumber + ' clicked');
-    this.http.get(`http://192.168.1.100:8080/hdmi/${buttonNumber}`).subscribe(
-        (response) => {
-          console.log('HTTP call successful:', response);
-        },
-        (error) => {
-          console.error('HTTP call failed:', error);
-        }
-    );
+    if (buttonNumber !== 0) {
+      this.http.get(`http://192.168.1.100:8080/hdmi/${buttonNumber}`).subscribe(
+          (response) => {
+            console.log('HTTP call successful:', response);
+          },
+          (error) => {
+            console.error('HTTP call failed:', error);
+          }
+      );
+    } else {
+      console.log('Button number is zero, no HTTP call made.');
+    }
   }
 }
