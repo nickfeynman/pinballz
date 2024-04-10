@@ -1,7 +1,7 @@
 <div class="container-fluid bg-black p-0">
-    <div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-3" *ngFor="let button of buttons">
-            <button type="button" class="btn btn-secondary w-100 border-0" (click)="button.action()">
+    <div class="row row-cols-1 px-0 row-cols-md-2">
+        <div class="col px-0" *ngFor="let button of buttons">
+            <button type="button" class="btn-special" (click)="button.action()">
                 <img [src]="'assets/' + button.image" [alt]="button.label" class="img-fluid"  style="object-fit: contain; width: 100%;">
             </button>
         </div>
