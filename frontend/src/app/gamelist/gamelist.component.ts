@@ -27,10 +27,15 @@ export class GamelistComponent {
   ];
 
   buttonClicked(buttonNumber: number) {
-    // Handle button click logic here
+    // production
+    const ipAddress = '192.168.1.100';
+
+    // development
+    //const ipAddress = '192.168.1.161';
+
     console.log('Button ' + buttonNumber + ' clicked');
     if (buttonNumber !== 0) {
-      this.http.get(`http://192.168.1.100:8080/hdmi/${buttonNumber}`).subscribe(
+      this.http.get(`http://${ipAddress}:8080/hdmi/${buttonNumber}`).subscribe(
           (response) => {
             console.log('HTTP call successful:', response);
           },
