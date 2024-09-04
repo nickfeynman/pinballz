@@ -21,6 +21,7 @@ public class HdmiSwitch {
     }
 
     public void setChannel(int id)  {
+        System.out.println("Changing to HDMI input:  " + id);
         if (testMode) {
             System.out.println("Simulating changing to hdmi input " + id);
             try {

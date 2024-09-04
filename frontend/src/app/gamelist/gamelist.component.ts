@@ -21,7 +21,7 @@ export class GamelistComponent {
     { label: 'Congo', action: () => this.buttonClicked(5), image: 'congo.png' },
     { label: 'The Shadow', action: () => this.buttonClicked(6), image: 'theshadow.png' },
     { label: 'Spectrum', action: () => this.buttonClicked(7), image: 'spectrum.png' },
-    { label: 'NYC PINS', action: () => this.buttonClicked(0), image: 'nycpins.png' }
+    { label: 'NYC PINS', action: () => this.buttonClicked(8), image: 'nycpins.png' }
 
     // Add more button data as needed
   ];

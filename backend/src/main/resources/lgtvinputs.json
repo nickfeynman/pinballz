@@ -1,0 +1,96 @@
+{
+    "type": "response",
+    "id": "input_0",
+    "payload": {
+        "returnValue": true,
+        "devices": [
+            {
+                "id": "HDMI_1",
+                "label": "PC",
+                "port": 1,
+                "connected": true,
+                "appId": "com.webos.app.hdmi1",
+                "icon": "https://192.168.1.105:3001/resources/90e1af366d9179518e885ac7a11f6bec0d4560eb/pc.png",
+                "forceIcon": false,
+                "modified": false,
+                "spdProductDescription": "Integrated gfx",
+                "spdVendorName": "Intel",
+                "spdSourceDeviceInfo": "PC general",
+                "lastUniqueId": -1,
+                "hdmiPlugIn": true,
+                "subList": [
+                    {
+                        "id": "URCU",
+                        "serviceType": "pc",
+                        "connectedInput": "HDMI_1",
+                        "serviceName": "",
+                        "settopCode": "",
+                        "settopOption": "",
+                        "brandName": "PC",
+                        "labelName": "PC",
+                        "codeset": "",
+                        "ossSetupStatus": "complete",
+                        "detectedMethod": "auto_lookup",
+                        "serviceArea": "",
+                        "isMainSTB": false,
+                        "priorityOverCEC": false,
+                        "hasPowerKey": false
+                    }
+                ],
+                "subCount": 1,
+                "favorite": false
+            },
+            {
+                "id": "HDMI_2",
+                "label": "HDMI 2",
+                "port": 2,
+                "connected": false,
+                "appId": "com.webos.app.hdmi2",
+                "icon": "https://192.168.1.105:3001/resources/befc391dde5a0aa580e95401c34fc11dce6a41db/HDMI_2.png",
+                "forceIcon": false,
+                "modified": false,
+                "lastUniqueId": -1,
+                "hdmiPlugIn": false,
+                "subList": [],
+                "subCount": 0,
+                "favorite": false
+            },
+            {
+                "id": "HDMI_3",
+                "label": "HDMI 3",
+                "port": 3,
+                "connected": false,
+                "appId": "com.webos.app.hdmi3",
+                "icon": "https://192.168.1.105:3001/resources/48bd2490e2ba125e0d56252dc28438d55fe72104/HDMI_3.png",
+                "forceIcon": false,
+                "modified": false,
+                "lastUniqueId": -1,
+                "hdmiPlugIn": false,
+                "subList": [],
+                "subCount": 0,
+                "favorite": false
+            },
+            {
+                "id": "HDMI_4",
+                "label": "HDMI 4",
+                "port": 4,
+                "connected": false,
+                "appId": "com.webos.app.hdmi4",
+                "icon": "https://192.168.1.105:3001/resources/9b5908a9eec8e33084bab917fc2aa1d1f1842c6b/HDMI_4.png",
+                "forceIcon": false,
+                "modified": false,
+                "lastUniqueId": -1,
+                "hdmiPlugIn": false,
+                "subList": [],
+                "subCount": 0,
+                "favorite": false
+            }
+        ]
+    }
+}
+{
+    "closing": {
+        "code": 1000,
+        "reason": ""
+    }
+}

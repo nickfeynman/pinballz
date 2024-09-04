@@ -16,6 +16,7 @@ public class ScreenSaver {
     private HdmiSwitch hdmiSwitch;
 
     private ScheduledFuture yourTaskState;
+
     private int minutesToAdd = 20;
 
     @Autowired
