@@ -1,5 +1,7 @@
 package dev.marco.demo.backend;
 
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -8,9 +10,11 @@ import java.net.Socket;
 import java.util.HexFormat;
 
 @Component
-public class HdmiSwitch {
+public class HdmiSwitch implements ApplicationEventPublisherAware {
 
     private boolean testMode;
+
+    private ApplicationEventPublisher eventPublisher;
 
     public HdmiSwitch() {
         this.testMode = false;
@@ -44,6 +48,12 @@ public class HdmiSwitch {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            eventPublisher.publishEvent(new ChannelChangedEvent(this, id));
         }
+    }
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        this.eventPublisher = eventPublisher;
     }
 }
