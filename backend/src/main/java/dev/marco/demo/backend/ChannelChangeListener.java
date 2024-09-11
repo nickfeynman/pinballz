@@ -1,5 +1,7 @@
 package dev.marco.demo.backend;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
@@ -8,6 +10,8 @@ import org.springframework.web.client.RestClient;
 
 @Component
 public class ChannelChangeListener {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final RestClient restClient;
     private final String apiUrl;
@@ -20,15 +24,21 @@ public class ChannelChangeListener {
     @Async
     @EventListener
     public void handleChannelChangedEvent(ChannelChangedEvent event) {
-        System.out.println("Channel changed event received.  New channel: " + event.getNewChannelId());
+        logger.info("Channel changed event received.  New channel: " + event.getNewChannelId());
 
-        String response = restClient.post()
-                .uri(apiUrl + "/active-pin-id")
-                .body(event.getNewChannelId())
-                .retrieve()
-                .body(String.class);
+        logger.info("Calling {}/active-pin-id with channel {}", apiUrl, event.getNewChannelId());
+        try {
+            String response = restClient.post()
+                    .uri(apiUrl + "/active-pin-id")
+                    .body(event.getNewChannelId())
+                    .retrieve()
+                    .body(String.class);
+        } catch (Exception e) {
+            logger.error("Could not call {} with channelId {}", apiUrl , event.getNewChannelId());
+        }
 
-        System.out.println("API Response: " + response);
+
+        logger.info("handleChannelChangedEvent completed");
 
     }
 }

@@ -17,4 +17,12 @@ public class ChannelChangedEvent {
     public Object getSource() {
         return source;
     }
+
+    @Override
+    public String toString() {
+        return "ChannelChangedEvent{" +
+                "newChannelId=" + newChannelId +
+                ", source=" + source +
+                '}';
+    }
 }
