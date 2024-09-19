@@ -15,12 +15,12 @@ export class GamelistComponent {
 
   buttons = [
     { label: 'Star Trek -TNG', action: () => this.buttonClicked(1), image: 'startrek.png' },
-    { label: 'Deadpool', action: () => this.buttonClicked(2), image: 'deadpool.png' },
+    { label: 'Indianapolis 500', action: () => this.buttonClicked(2), image: 'indy.jpeg' },
     { label: 'Whirlwind', action: () => this.buttonClicked(3), image: 'whirlwind.png' },
     { label: 'Pulp Fiction', action: () => this.buttonClicked(4), image: 'pulpfiction.png' },
     { label: 'Congo', action: () => this.buttonClicked(5), image: 'congo.png' },
     { label: 'The Shadow', action: () => this.buttonClicked(6), image: 'theshadow.png' },
-    { label: 'Spectrum', action: () => this.buttonClicked(7), image: 'spectrum.png' },
+    { label: 'The Who\'s Tommy Pinball Wizard', action: () => this.buttonClicked(7), image: 'tommy.png' },
     { label: 'NYC PINS', action: () => this.buttonClicked(8), image: 'nycpins.png' }
 
     // Add more button data as needed
@@ -28,7 +28,7 @@ export class GamelistComponent {
 
   buttonClicked(buttonNumber: number) {
     // production
-    const ipAddress = '192.168.1.100';
+    const ipAddress = '192.168.1.104';
 
     // development
     //const ipAddress = '192.168.1.161';

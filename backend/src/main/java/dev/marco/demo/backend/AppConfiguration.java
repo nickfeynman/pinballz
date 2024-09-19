@@ -24,7 +24,7 @@ public class AppConfiguration {
     public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> webServerFactoryCustomizer() {
         return factory -> {
             try {
-                factory.setAddress(InetAddress.getByName("192.168.1.161")); // Replace with your desired IP address
+                factory.setAddress(InetAddress.getByName("192.168.1.104")); // Replace with your desired IP address
             } catch (UnknownHostException e) {
                 throw new RuntimeException(e);
             }
