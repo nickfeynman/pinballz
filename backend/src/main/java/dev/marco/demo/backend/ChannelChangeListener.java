@@ -1,5 +1,6 @@
 package dev.marco.demo.backend;
 
+import dev.marco.demo.backend.webcams.WebcamSwitcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +16,7 @@ public class ChannelChangeListener {
 
     private final RestClient restClient;
     private final String apiUrl;
+    private final WebcamSwitcher webcamSwitcher = new WebcamSwitcher();
 
     public ChannelChangeListener(@Value("${matchplay.api.url}") String apiUrl) {
         this.restClient = RestClient.create();
@@ -26,7 +28,8 @@ public class ChannelChangeListener {
     public void handleChannelChangedEvent(ChannelChangedEvent event) {
         logger.info("Channel changed event received.  New channel: " + event.getNewChannelId());
 
-        logger.info("Calling {}/active-pin-id with channel {}", apiUrl, event.getNewChannelId());
+
+        logger.info("Calling matchplay app {}/active-pin-id with channel {}", apiUrl, event.getNewChannelId());
         try {
             String response = restClient.post()
                     .uri(apiUrl + "/active-pin-id")
@@ -37,6 +40,9 @@ public class ChannelChangeListener {
             logger.error("Could not call {} with channelId {}", apiUrl , event.getNewChannelId());
         }
 
+        logger.info("Going to switch the webcam");
+
+        webcamSwitcher.switchCamera(event.getNewChannelId());
 
         logger.info("handleChannelChangedEvent completed");
 

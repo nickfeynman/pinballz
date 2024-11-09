@@ -1,9 +1,8 @@
-package dev.marco.demo.backend.tv;
+package dev.marco.demo.backend.process;
 
 import org.springframework.util.StringUtils;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class ProcessExecutor {
 
-    ProcessResult execute(String command) {
+    public ProcessResult execute(String command) {
         String[] commands;
         if (System.getProperty("os.name").toLowerCase().startsWith("windows")) {
             commands = new String[] { "cmd.exe", "/c", command };
