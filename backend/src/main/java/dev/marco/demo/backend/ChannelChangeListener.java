@@ -29,6 +29,13 @@ public class ChannelChangeListener {
         logger.info("Channel changed event received.  New channel: " + event.getNewChannelId());
 
 
+        // callMatchPlay(event);
+
+        logger.info("handleChannelChangedEvent completed");
+
+    }
+
+    private void callMatchPlay(ChannelChangedEvent event) {
         logger.info("Calling matchplay app {}/active-pin-id with channel {}", apiUrl, event.getNewChannelId());
         try {
             String response = restClient.post()
@@ -43,8 +50,5 @@ public class ChannelChangeListener {
         logger.info("Going to switch the webcam");
 
         webcamSwitcher.switchCamera(event.getNewChannelId());
-
-        logger.info("handleChannelChangedEvent completed");
-
     }
 }

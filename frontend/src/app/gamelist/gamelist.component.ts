@@ -19,8 +19,8 @@ export class GamelistComponent {
     { label: 'Whirlwind', action: () => this.buttonClicked(3), image: 'whirlwind.png' },
     { label: 'Pulp Fiction', action: () => this.buttonClicked(4), image: 'pulpfiction.png' },
     { label: 'Congo', action: () => this.buttonClicked(5), image: 'congo.png' },
-    { label: 'The Shadow', action: () => this.buttonClicked(6), image: 'theshadow.png' },
-    { label: 'The Who\'s Tommy Pinball Wizard', action: () => this.buttonClicked(7), image: 'tommy.png' },
+    { label: 'Kong', action: () => this.buttonClicked(6), image: 'kong.png' },
+    { label: 'Walking Dead', action: () => this.buttonClicked(7), image: 'walkingdead.png' },
     { label: 'NYC PINS', action: () => this.buttonClicked(8), image: 'nycpins.png' }
 
     // Add more button data as needed

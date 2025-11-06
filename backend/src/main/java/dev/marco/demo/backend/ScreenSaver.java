@@ -29,6 +29,7 @@ public class ScreenSaver {
     public void start(){
         Instant currentTimeStampInUTC = Instant.now();
         Instant inTheFuture = currentTimeStampInUTC.plus(minutesToAdd, ChronoUnit.MINUTES);
+        System.out.println("** Not starting screensaver!");
         yourTaskState =
                 taskScheduler.schedule(
                         new ChangeToScreenSaverInput(this.hdmiSwitch), inTheFuture);

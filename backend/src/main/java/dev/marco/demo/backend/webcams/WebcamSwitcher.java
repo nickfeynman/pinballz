@@ -9,12 +9,14 @@ public class WebcamSwitcher {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     public void switchCamera(int id) {
-        logger.info("pin id to switch to " + id);
-        int webcamId = calculateWebcamFromPinId(id);
-        logger.info("webcam id to switch to " + webcamId);
-        ProcessExecutor processExecutor = new ProcessExecutor();
-        processExecutor.execute("/home/pin/switch-webcam.sh " + webcamId);
-        logger.info("switched");
+        if (false) {
+            logger.info("pin id to switch to " + id);
+            int webcamId = calculateWebcamFromPinId(id);
+            logger.info("webcam id to switch to " + webcamId);
+            ProcessExecutor processExecutor = new ProcessExecutor();
+            processExecutor.execute("/home/pin/switch-webcam.sh " + webcamId);
+            logger.info("switched");
+        }
     }
 
     private int calculateWebcamFromPinId(int id) {
@@ -24,8 +26,8 @@ public class WebcamSwitcher {
             case 2, 3 ->  // Whirlwind
                     2;  // Pulp Fiction
             case 4, 5 ->  // Congo
-                    3;  // The Shadow
-            case 6, 7 ->  // Tommy Pinball Wizard
+                    3;  // Kong
+            case 6, 7 ->  // Walking Dead Wizard
                     4;
             default ->
                 // Default case for unknown IDs or NYC PINS (ID 8)
